@@ -4,14 +4,15 @@ import { Button } from "../../component/atom/Button";
 import React, { useEffect } from "react";
 const Product = () => {
   const [open, isOpen] = React.useState(true);
-
+  const [colorNav, setColorNav] = React.useState("bg-[#F9F4EE]");
   useEffect(() => {
     window.addEventListener("scroll", scroll, true);
   }, []);
   let scroll = () => {
     if (window.scrollY > 186) {
+      setColorNav("bg-[white]");
     } else {
-      console.log("ok");
+      setColorNav("bg-[#F9F4EE]");
     }
   };
 
@@ -19,7 +20,10 @@ const Product = () => {
     <div className="w-[100%] bg-[#F9F4EE] h-[auto] max-w-[100%]">
       <nav
         id="navbar"
-        className="lg:flex lg:justify-between w-[100%] mt-[-90px] z-10 bg-[#F9F4EE] fixed"
+        className={[
+          "lg:flex lg:justify-between w-[100%] mt-[-90px] z-10 fixed",
+          colorNav,
+        ].join(" ")}
       >
         <div className="flex justify-between  items-center px-4 py-4">
           <div
@@ -323,31 +327,37 @@ const Product = () => {
                     />
                   </div>
 
-                  <div className="bg-[#0A2B32]/50  bg-cover md:mt-[0] h-[100%] mb-[200px]">
+                  <div className="bg-[#0A2B32]/50 backdrop-filter backdrop-blur-lg bg-cover md:mt-[0] h-[100%] mb-[100px]">
                     <div className=" flex justify-center contents-center items-center mt-[30px]">
-                      <div className=" w-[100%] h-[auto] max-h-[100%] ml-4 mr-4">
+                      <div className=" w-[100%]  max-h-[100%] ml-9 mr-9 mt-[30px]">
                         <Text
                           weight="normal"
                           size="medium-white"
-                          styles={["md:text-[24px]"]}
+                          styles={["text-center", "md:text-[24px]"]}
                           font="Montserrat"
-                          label="Selamat datang dimasa depan, Anda telah hadir di"
+                          label={
+                            <p>
+                              Selamat datang dimasa depan, Anda telah hadir di,
+                              <span className="text-[#4AC4DC]">
+                                {" "}
+                                gloINGVerse{" "}
+                              </span>
+                              Comunity
+                            </p>
+                          }
                         />
-
-                        <div className="">
-                          <Text
-                            weight="normal"
-                            size="medium-primary"
-                            styles={["md:text-[36px]"]}
-                            font="Montserrat"
-                            label="gloiNGVerse"
-                          />
+                        <div className="mt-[90px]">
                           <Text
                             weight="normal"
                             size="medium-white"
-                            styles={["md:text-[24px]"]}
-                            font="Montserrat"
-                            label="Comunity"
+                            styles={[
+                              "text-center",
+                              "sm:text[16px]",
+                              "md:text[16px]",
+                              "lg:text-[24px]",
+                            ]}
+                            font="Hind Madurai"
+                            label="Dimana anda bisa mendapatkan avatar dengan membeli produk gloiNG, yang kemudian dapat anda mainkan untuk menghasilkan income dalam bentuk crypto."
                           />
                         </div>
                       </div>
@@ -358,7 +368,84 @@ const Product = () => {
             </div>
           </div>
         </div>
-        <div className="h-[400px]"></div>
+        <div className="md:ml-[50px] mt-[100px] ">
+          <div className="ml-9 mr-9 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
+            <Text
+              weight="normal"
+              size="intermediate-large-white"
+              styles={[]}
+              font="Montserrat"
+              label="gloiNGverse"
+            />
+            <Text
+              weight="normal"
+              size="medium-white"
+              styles={["mt-[30px]", "md:mt-[0px]"]}
+              font="Hind Madurai"
+              label="Adalah sebuah game crypto yang kami hadirkan dengan konsep play to earn, dimana untuk bergabung dalam game, user harus memiliki avatar yang bisa anda dapatkan melalui pembelian produk gloing atau membeli avatar secara langsung untuk diadu dengan avatar milik lawan."
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 ml-9 mr-9 mt-[83px]">
+          <div className="md:hidden contents">
+            <Imagebackground
+              size="fullpages"
+              inputSizeHeight="60px"
+              inputSizeWidth="60px"
+              radius={false}
+              name="Group190.svg"
+            />
+          </div>
+          <div className="mt-[0] md:mt-[74px] ml-1 mr-1 md:ml-12 md:mr-12 h-[430px] md:h-[800px]">
+            <Text
+              weight="normal"
+              size="medium-white"
+              styles={["mt-[30px]", "md:mt-[0px]"]}
+              font="Montserrat"
+              label={
+                <p>
+                  Setiap <span className="text-[#4AC4DC]">Avatar</span> Hadir
+                  Dengan Keunikannya Masing Masing, Terus Koleksi dan Dapatkan
+                  Semua Kelasnya!
+                </p>
+              }
+            />
+
+            <Text
+              weight="normal"
+              size="intermediate-white"
+              styles={["mt-[30px]", "md:mt-[18px]"]}
+              font="Hind Madurai"
+              label={
+                <p>
+                  Setiap karakter avatar memiliki keunikannya masing masing,
+                  dengan berbagai kelas yaitu common, rare, epic, dan Legend.
+                  Semua karakter memiliki level yang sama di game. Namun semakin
+                  Unik karakter anda. Semakin tinggi pula potensi income anda.
+                </p>
+              }
+            />
+
+            <div className="mt-[30px] md:mt-[90px]">
+              <Imagebackground
+                size="fullpages"
+                inputSizeHeight="60px"
+                inputSizeWidth="60px"
+                radius={false}
+                name="Group101.svg"
+              />
+            </div>
+          </div>
+          <div className="md:contents hidden">
+            <Imagebackground
+              size="fullpages"
+              inputSizeHeight="60px"
+              inputSizeWidth="60px"
+              radius={false}
+              name="Group190.svg"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

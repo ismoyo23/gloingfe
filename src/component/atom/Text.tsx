@@ -19,7 +19,7 @@ interface TextProps {
     | "intermediate-large-white"
     | "large-white"
     | "super-large-white";
-  label: string;
+  label: any;
   font: string;
   styles: any[];
 }
@@ -180,7 +180,7 @@ export const Text = ({
 
     case "intermediate-white":
       style.push(
-        "text-[16px]",
+        "text-[14px]",
         "text-[white]",
         "sm:text[18px]",
         "md:text[18px]",
@@ -192,11 +192,8 @@ export const Text = ({
 
     case "medium-white":
       style.push(
-        "text-[24px]",
-        "iphone12promax:text-[24px]",
-        "sm:text[24px]",
-        "md:text[38px]",
-        "lg:text-[38px]",
+        "text-[20px]",
+        "md:text-[38px]",
         "text-[white]",
         `font-['${font}']`,
         `font-${weight}`
@@ -205,7 +202,9 @@ export const Text = ({
 
     case "intermediate-large-white":
       style.push(
-        "text-[44px]",
+        "text-[24px]",
+        "md:text-[44px]",
+        "xs:text[24px]",
         "text-[white]",
         `font-['${font}']`,
         `font-${weight}`
