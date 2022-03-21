@@ -19,16 +19,15 @@ const Product = () => {
   return (
     <div className="w-[100%] bg-[#F9F4EE] h-[auto] max-w-[100%]">
       <nav
-        id="navbar"
         className={[
-          "lg:flex lg:justify-between w-[100%] mt-[-90px] z-10 fixed",
+          "lg:flex lg:justify-between w-[100%] h-[100%] md:h-[89px] mt-[-93px] z-10 fixed",
           colorNav,
         ].join(" ")}
       >
         <div className="flex justify-between  items-center px-4 py-4">
           <div
             style={{ whiteSpace: "nowrap" }}
-            className="text-3xl ml-3 lg:ml-4 bold mt-1"
+            className="text-3xl ml-3 lg:ml-4 bold mt-1 "
           >
             <Imagebackground
               size="manualy"
@@ -134,7 +133,7 @@ const Product = () => {
           </div>
         </div>
       </nav>
-      <div className="contrainer ml-9 mr-9">
+      <div className="contrainer ml-9 mr-9 ">
         <div className="mt-[90px]  justify-left md:container md:mx-auto sm:justify-left md:justify-center lg:justify-center xl:justify-center w-[100%] flex">
           <div className=" items-center content-center mt-[120px]">
             <div className="flex justify-between w-[100%]">
